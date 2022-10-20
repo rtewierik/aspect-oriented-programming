@@ -1,0 +1,36 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm" version("1.7.20")
+    id "io.freefair.aspectj.post-compile-weaving" version("6.5.1")
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: "io.freefair.aspectj.post-compile-weaving"
+apply plugin: 'kotlin'
+apply plugin: "java"
+apply plugin: "groovy"
+
+sourceSets {
+    foo //https://github.com/freefair/gradle-plugins/issues/329
+}
+
+dependencies {
+    //aspect project(":aspectj:aspect")
+
+    implementation "org.slf4j:slf4j-api:2.+"
+
+    implementation "org.aspectj:aspectjrt:1.9.9.1"
+    implementation localGroovy()
+
+    testImplementation "junit:junit:4.13.2"
+}
+
+tasks.named("compileJava").configure {
+    ajc {
+        options {
+            compilerArgs += "-showWeaveInfo"
+        }
+    }
+}
