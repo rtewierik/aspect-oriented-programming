@@ -2,8 +2,11 @@ package com.assertj
 
 class SecuredMethod {
     @Secured(securityType = SecurityType.NEVER)
-    fun lockedMethod() = "LOCKED"
+    fun lockedMethod(jwt: JWT) = "LOCKED"
 
     @Secured(securityType = SecurityType.ALWAYS)
-    fun unlockedMethod() = "UNLOCKED"
+    fun unlockedMethod(jwt: JWT) = "UNLOCKED"
+
+    @Secured(securityType = SecurityType.JWT)
+    fun jwtMethod(jwt: JWT) = "JWT"
 }

@@ -6,5 +6,6 @@ object SecurityFactory {
         when(securityType) {
             SecurityType.ALWAYS -> AlwaysSecurity()
             SecurityType.NEVER -> NeverSecurity()
+            SecurityType.JWT -> JWTSecurity()
         }
 }

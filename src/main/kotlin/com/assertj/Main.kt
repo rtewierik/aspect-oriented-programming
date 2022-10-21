@@ -6,8 +6,8 @@ class Main {
         @JvmStatic
         fun main(args: Array<String>) {
             val service = SecuredMethod()
-            service.lockedMethod()
-            service.unlockedMethod()
+            service.lockedMethod(JWT("invalid"))
+            service.unlockedMethod(JWT("valid"))
         }
     }
 }

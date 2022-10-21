@@ -13,5 +13,5 @@ class SecuredMethodAspect {
 
     @Around("securityPointcut(secured)")
     fun around(pjp: ProceedingJoinPoint, secured: Secured) =
-        if (SecurityFactory.createSecurity(secured.securityType).isSecure()) pjp.proceed() else null
+        if (SecurityFactory.createSecurity(secured.securityType).isSecure(pjp.args[0] as JWT)) pjp.proceed() else null
 }

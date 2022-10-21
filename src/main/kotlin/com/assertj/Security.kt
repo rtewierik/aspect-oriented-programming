@@ -2,13 +2,17 @@ package com.assertj
 
 interface Security {
 
-    fun isSecure(): Boolean
+    fun isSecure(jwt: JWT): Boolean
+}
+
+class JWTSecurity : Security {
+    override fun isSecure(jwt: JWT) = jwt.token == "valid"
 }
 
 class AlwaysSecurity : Security {
-    override fun isSecure() = true
+    override fun isSecure(jwt: JWT) = true
 }
 
 class NeverSecurity : Security {
-    override fun isSecure() = false
+    override fun isSecure(jwt: JWT) = false
 }

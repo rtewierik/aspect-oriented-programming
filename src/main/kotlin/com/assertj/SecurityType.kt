@@ -2,5 +2,6 @@ package com.assertj
 
 enum class SecurityType {
     ALWAYS,
-    NEVER
+    NEVER,
+    JWT
 }
