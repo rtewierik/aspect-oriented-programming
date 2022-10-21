@@ -6,7 +6,7 @@ interface Security {
 }
 
 class JWTSecurity : Security {
-    override fun isSecure(jwt: JWT) = jwt.token == "valid"
+    override fun isSecure(jwt: JWT) = jwt.token == "valid" // Token validation algorithm
 }
 
 class AlwaysSecurity : Security {
