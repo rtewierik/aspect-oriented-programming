@@ -1,0 +1,4 @@
+enum SecurityTypeJava {
+    ALWAYS,
+    NEVER
+}

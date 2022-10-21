@@ -34,3 +34,11 @@ tasks.named("compileJava").configure {
         }
     }
 }
+
+tasks.named("compileKotlin").configure {
+    ajc {
+        options {
+            compilerArgs += "-showWeaveInfo"
+        }
+    }
+}
