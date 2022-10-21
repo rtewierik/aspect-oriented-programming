@@ -1,3 +1,5 @@
+package com.assertj;
+
 interface SecurityJava {
 
     boolean isSecure();

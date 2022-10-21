@@ -10,16 +10,13 @@ repositories {
 apply plugin: "io.freefair.aspectj.post-compile-weaving"
 apply plugin: 'kotlin'
 apply plugin: "java"
-apply plugin: "groovy"
 
 sourceSets {
     foo //https://github.com/freefair/gradle-plugins/issues/329
 }
 
 dependencies {
-    //aspect project(":aspectj:aspect")
-
-    implementation "org.slf4j:slf4j-api:2.+"
+    implementation 'org.slf4j:slf4j-api:2.0.3'
 
     implementation "org.aspectj:aspectjrt:1.9.9.1"
     implementation localGroovy()
@@ -35,7 +32,14 @@ tasks.named("compileJava").configure {
     }
 }
 
-tasks.named("compileKotlin").configure {
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
     ajc {
         options {
             compilerArgs += "-showWeaveInfo"

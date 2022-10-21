@@ -1,3 +1,5 @@
+package com.assertj
+
 class Main {
 
     companion object {

@@ -1,11 +1,13 @@
+package com.assertj;
+
 public class SecuredMethodJava {
 
-    @Secured(securityType = SecurityType.NEVER)
+    @SecuredJava(securityType = SecurityTypeJava.NEVER)
     public String lockedMethod() {
         return "LOCKED";
     }
 
-    @Secured(securityType = SecurityType.ALWAYS)
+    @SecuredJava(securityType = SecurityTypeJava.ALWAYS)
     public String unlockedMethod() {
         return "UNLOCKED";
     }

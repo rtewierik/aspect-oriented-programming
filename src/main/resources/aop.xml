@@ -1,6 +1,6 @@
 <aspectj>
     <aspects>
-        <aspect name="SecuredMethodAspect"/>
+        <aspect name="com.assertj.SecuredMethodAspect"/>
         <weaver options="-verbose -showWeaveInfo">
             <include within="*"/>
         </weaver>

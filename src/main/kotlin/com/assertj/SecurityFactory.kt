@@ -1,3 +1,5 @@
+package com.assertj
+
 object SecurityFactory {
 
     fun createSecurity(securityType: SecurityType): Security =

@@ -1,3 +1,5 @@
+package com.assertj
+
 class SecuredMethod {
     @Secured(securityType = SecurityType.NEVER)
     fun lockedMethod() = "LOCKED"

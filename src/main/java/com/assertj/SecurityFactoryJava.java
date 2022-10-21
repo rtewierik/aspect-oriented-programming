@@ -1,3 +1,5 @@
+package com.assertj;
+
 class SecurityFactoryJava {
 
     public static SecurityJava createSecurity(SecurityTypeJava securityTypeJava) {

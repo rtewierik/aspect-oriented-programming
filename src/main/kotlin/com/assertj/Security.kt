@@ -1,3 +1,5 @@
+package com.assertj
+
 interface Security {
 
     fun isSecure(): Boolean
